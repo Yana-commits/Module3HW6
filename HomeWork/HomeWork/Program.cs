@@ -5,29 +5,31 @@ namespace HomeWork
 {
     class Program
     {
-       async static Task Main(string[] args)
+        async static Task Main(string[] args)
         {
             MessageBox messageBox = new MessageBox();
 
-            messageBox.action += CloseWindow;
+            var tss = new TaskCompletionSource();
 
-           await OpenAsync(messageBox);
+            messageBox.action += (State state) =>
+            {
+                if (state == State.Cancel)
+                {
+                    Console.WriteLine("Cancel");
+                }
+                else
+                {
+                    Console.WriteLine("Ok");
+                }
+
+                tss.SetResult();
+            };
+
+            messageBox.Open();
+
+            await tss.Task;
         }
 
-        public static void CloseWindow(State state)
-        {
-            Console.WriteLine($"{state}");
-        }
-        public static Task OpenAsync(MessageBox messageBox)
-        {
-            var task = new TaskCompletionSource<bool>();
-            Task.Run(async ()=> { 
-                bool result = await messageBox.Open();
-                task.SetResult(result);
-            });
-           
-
-            return task.Task;
-        }
+      
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\A-level\\HomeWork\\HomeWork\\HomeWork.csproj": {}
+    "E:\\A-level\\Module3HW6\\HomeWork\\HomeWork\\HomeWork.csproj": {}
   },
   "projects": {
-    "E:\\A-level\\HomeWork\\HomeWork\\HomeWork.csproj": {
+    "E:\\A-level\\Module3HW6\\HomeWork\\HomeWork\\HomeWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\A-level\\HomeWork\\HomeWork\\HomeWork.csproj",
+        "projectUniqueName": "E:\\A-level\\Module3HW6\\HomeWork\\HomeWork\\HomeWork.csproj",
         "projectName": "HomeWork",
-        "projectPath": "E:\\A-level\\HomeWork\\HomeWork\\HomeWork.csproj",
+        "projectPath": "E:\\A-level\\Module3HW6\\HomeWork\\HomeWork\\HomeWork.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\A-level\\HomeWork\\HomeWork\\obj\\",
+        "outputPath": "E:\\A-level\\Module3HW6\\HomeWork\\HomeWork\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.Threading.Tasks": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
